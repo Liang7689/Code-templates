@@ -1,0 +1,11 @@
+Templates：
+def moveZeroes(self, nums):
+    fast, slow = 0, 0
+    while fast < len(nums):
+        if nums[fast] != 0:
+            nums[fast], nums[slow] = nums[slow], nums[fast]
+            slow += 1 
+        fast += 1
+        
+Target problems:
+1. partition

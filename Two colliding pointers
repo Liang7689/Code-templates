@@ -1,0 +1,29 @@
+Template:
+  def lastPosition(self, nums, target):
+      # write your code here
+      if not nums:
+          return -1
+
+      start = 0
+      end = len(nums) - 1 
+      # if use while start < end, it may end up infinite loops in some special cases.
+      while start < end - 1:
+          mid = (start + end) // 2
+          if target < nums[mid]:
+              end = mid 
+          elif target > nums[mid]:
+              start = mid
+          else:
+              start = mid
+
+      if nums[end] ==  target:
+          return end         
+      if nums[start] == target:
+          return start
+
+
+      return -1
+
+Target problems:
+1) binary search
+2) Two sum.
